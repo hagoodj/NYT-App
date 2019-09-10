@@ -5,7 +5,7 @@ $("#search").on("click", function() {
     var q = $("#search-term").val();
     var startDate = $("#start-year").val();
     var endDate = $("#end-year").val();
-    var resultsNum = $("records-retrived option:selected").val();
+    var resultsNum = $("#records-retrieved").val();
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +
     q + "&start_date=" + startDate + "0101&end_date=" + endDate + "1231&api-key=ubVFwmgMiXClcqzz9FyoX639MSKR6wGt"
 
@@ -14,6 +14,10 @@ $("#search").on("click", function() {
         method: "GET"
     }).then(function(response) {
         var results = response.response.docs;
+        if (resultsNum > 10) {
+            resultsNum = 10;
+        }
+        
         for (var i = 0; i < resultsNum; i ++) {
             var article = ("<div>");
             var headline = " " + results[i].headline.print_headline;
