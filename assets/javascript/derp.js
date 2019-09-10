@@ -21,7 +21,7 @@ $("#search").on("click", function() {
         }
 
         for (var i = 0; i < resultsNum; i ++) {
-            var article = ("<div>");
+            var article = $("<div>");
             var headline = " " + results[i].headline.print_headline;
             var byLine = " " + results[i].byline.original;
             var section = "<br>Section: " + results[i].section_name;
@@ -29,7 +29,7 @@ $("#search").on("click", function() {
             var pp = results[i].print_page +  " pp.";
             var articleUrl = "<br>" + results[i].web_url;
 
-            article.append(i, headline, byLine, pp, section, pubDate, articleUrl)
+            article.append(i, headline, byLine, pp, section, pubDate, articleUrl);
             $("#articles-view").append(article);
         }
     })
