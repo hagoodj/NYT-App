@@ -1,0 +1,25 @@
+.jumbotron {
+    background: rgb(30, 30, 87);
+    color:white;
+}
+
+.display-4 {
+    font-weight: bold;
+}
+
+.card-header {
+    background-color: rgb(44, 39, 39);
+    color: white;
+}
+
+#footer {
+    padding: 20px;
+    border-top: lightgray solid 1px;
+}
+
+#search-term,
+#records-retrieved,
+#start-year,
+#end-year {
+    width: 100%;
+}
