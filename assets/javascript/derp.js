@@ -29,8 +29,8 @@ $("#search").on("click", function() {
             var pp = results[i].print_page +  " pp.";
             var articleUrl = "<br>" + results[i].web_url;
 
-            article.append(i, headline, byLine, pp, section, pubDate, articleUrl);
-            $("#articles-view").append(article);
+            article.append(i, headline, byLine, pp, section, pubDate, articleUrl)
+            $(".articles-view").append(article);
         }
     })
 
