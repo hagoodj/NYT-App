@@ -2,12 +2,14 @@
 $("#search").on("click", function() {
     event.preventDefault();
 
+    console.log("search was clicked!");
+
     var q = $("#search-term").val();
     var startDate = $("#start-year").val();
     var endDate = $("#end-year").val();
     var resultsNum = $("#records-retrieved").val();
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +
-    q + "&start_date=" + startDate + "0101&end_date=" + endDate + "1231&api-key=ubVFwmgMiXClcqzz9FyoX639MSKR6wGt"
+    q + "&start_date=" + startDate + "0101&end_date=" + endDate + "1231&api-key=0YPwVieguvy1TfgAQ0q807LIGYhm0rSw"
 
     $.ajax({
         url: queryURL,
@@ -17,7 +19,7 @@ $("#search").on("click", function() {
         if (resultsNum > 10) {
             resultsNum = 10;
         }
-        
+
         for (var i = 0; i < resultsNum; i ++) {
             var article = ("<div>");
             var headline = " " + results[i].headline.print_headline;
@@ -38,6 +40,7 @@ $("#search").on("click", function() {
 $("#clear").on("click", function() {
     event.preventDefault();
 
+    console.log("clear was clicked");
     // reset the input texts
     $("#search-term").val("");
     $("#records-retrieved").val("");
