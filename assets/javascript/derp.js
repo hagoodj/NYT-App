@@ -34,6 +34,7 @@ $("#search").on("click", function() {
             method: "GET"
         }).then(function(response) {
             var results = response.response.docs;
+            $(".articles-view").empty();
             console.log(results);
             if (resultsNum > 10 || resultsNum === 0 || resultsNum === "") {
                 resultsNum = 10;
@@ -70,4 +71,5 @@ $("#clear").on("click", function() {
     $("#start-year").val("");
     $("#end-year").val("");
     $("#search-term-label").html("Search Term");
+    $(".articles-view").empty();
 })
