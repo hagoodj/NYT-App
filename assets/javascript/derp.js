@@ -14,7 +14,7 @@ $("#search").on("click", function() {
         var startDate = "&start_date=" + $("#start-year").val() + "0101"; 
         var endDate = "&end_date=" + $("#end-year").val() + "1231";
         var resultsNum = $("#records-retrieved").val();
-        var apikey = "&api_key=0YPwVieguvy1TfgAQ0q807LIGYhm0rSw"
+        var apikey = "&api-key=0YPwVieguvy1TfgAQ0q807LIGYhm0rSw"
 
         // check if records is 0 or greater than 10
         if ($(resultsNum).val() > 10 || $(resultsNum).val() === 0 || $(resultsNum).val() === "") {
