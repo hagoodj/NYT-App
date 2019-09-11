@@ -11,10 +11,10 @@ $("#search").on("click", function() {
     else {
 
         var q = "q=" + $("#search-term").val();
-        var startDate = "&start_date=" + $("#start-year").val();
-        var endDate = "&end_date=" + $("#end-year").val();
+        var startDate = "&start_date=" + $("#start-year").val() + "0101"; 
+        var endDate = "&end_date=" + $("#end-year").val() + "1231";
         var resultsNum = $("#records-retrieved").val();
-        var apikey = "&api_key=ubVFwmgMiXClcqzz9FyoX639MSKR6wGt"
+        var apikey = "&api_key=0YPwVieguvy1TfgAQ0q807LIGYhm0rSw"
 
         // check if records is 0 or greater than 10
         if ($(resultsNum).val() > 10 || $(resultsNum).val() === 0 || $(resultsNum).val() === "") {
@@ -23,16 +23,17 @@ $("#search").on("click", function() {
         }
 
         // remove startDate string if input box is empty
-        if ($("#start-year").val() === "") {
+        if ($("#start-year").val() === "" || $("#start-year").val() < 1000) {
             startDate = "";
         }
 
         // remove endDate string if input box is empty
-        if ($("#end-year").val() === "") {
+        if ($("#end-year").val() === "" || $("#end-year").val() < 1000) {
             endDate = "";
         }
 
         var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" + q + startDate + endDate + apikey;
+        console.log(queryURL);
 
         $.ajax({
             url: queryURL,
