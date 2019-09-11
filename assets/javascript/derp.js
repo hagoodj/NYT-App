@@ -16,12 +16,6 @@ $("#search").on("click", function() {
         var resultsNum = $("#records-retrieved").val();
         var apikey = "&api-key=0YPwVieguvy1TfgAQ0q807LIGYhm0rSw"
 
-        // check if records is 0 or greater than 10
-        if ($(resultsNum).val() > 10 || $(resultsNum).val() === 0 || $(resultsNum).val() === "") {
-            // limit results to 10
-            resultsNum = 10;
-        }
-
         // remove startDate string if input box is empty
         if ($("#start-year").val() === "" || $("#start-year").val() < 1000) {
             startDate = "";
@@ -41,7 +35,7 @@ $("#search").on("click", function() {
         }).then(function(response) {
             var results = response.response.docs;
             console.log(results);
-            if (resultsNum > 10) {
+            if (resultsNum > 10 || resultsNum === 0 || resultsNum === "") {
                 resultsNum = 10;
             }
 
