@@ -6,7 +6,7 @@ $("#search").on("click", function() {
 
     if ($("#search-term").val() == "") {
         // prompt user for search term
-        $("#search-term-label").html("Search Term<span class='txt-danger'> (required)</span>");
+        $("#search-term-label").html("Search Term<span class='text-danger'> (required)</span>");
     }
     else {
 
@@ -14,7 +14,7 @@ $("#search").on("click", function() {
         var startDate = "&start_date=" + $("#start-year").val();
         var endDate = "&end_date=" + $("#end-year").val();
         var resultsNum = $("#records-retrieved").val();
-        var apikey = "&api_key="
+        var apikey = "&api_key=ubVFwmgMiXClcqzz9FyoX639MSKR6wGt"
 
         // check if records is 0 or greater than 10
         if ($(resultsNum).val() > 10 || $(resultsNum).val() === 0 || $(resultsNum).val() === "") {
