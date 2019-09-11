@@ -23,3 +23,8 @@
 #end-year {
     width: 100%;
 }
+
+body {
+    overflow: scroll;
+    margin-bottom: 80px;
+}
