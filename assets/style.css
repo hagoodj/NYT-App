@@ -28,3 +28,8 @@ body {
     overflow: scroll;
     margin-bottom: 80px;
 }
+
+.article {
+    border: lightgray solid 1px;
+    padding: 10px;
+}
