@@ -6,7 +6,7 @@ $("#search").on("click", function() {
 
     if ($("#search-term").val() == "") {
         // prompt user for search term
-        $("#search-term-label").html("Search Term<span class='txt-danger'> (required)</span>");
+        $("#search-term-label").html("Search Term<span class='text-danger'> (required)</span>");
     }
     else {
 
