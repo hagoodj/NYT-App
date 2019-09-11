@@ -52,7 +52,8 @@ $("#search").on("click", function() {
                 var section = "<br>Section: " + results[i].section_name;
                 var pubDate = "<br>" + results[i].pub_date;
                 var pp = results[i].print_page +  " pp.";
-                var articleUrl = $("<a>").attr("src", results[i].web_url);
+                var articleUrl = $("<a>").attr("href", results[i].web_url);
+                articleUrl.html("<br>" + results[i].web_url);
 
                 article.append(i, headline, byLine, pp, section, pubDate, articleUrl)
                 article.addClass("article");
